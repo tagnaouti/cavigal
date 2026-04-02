@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { events } from "@/lib/data";
+import { asset } from "@/lib/utils";
 
 const typeColors: Record<string, string> = {
   sortie: "bg-green-100 text-green-700 border-green-200",
@@ -42,7 +43,7 @@ export default function CalendrierPage() {
       <section className="relative text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/photos/photo8.jpg"
+            src={asset("/images/photos/photo8.jpg")}
             alt="Calendrier Cavigal"
             fill
             className="object-cover"

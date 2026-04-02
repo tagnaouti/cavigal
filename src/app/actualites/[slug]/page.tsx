@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { articles } from "@/lib/data";
+import { asset } from "@/lib/utils";
 import type { Metadata } from "next";
 
 const articleImages: Record<string, string> = {
-  "course-printaniere-2026": "/images/photos/photo1.jpg",
-  "stage-paques-jeunes": "/images/photos/photo2.jpg",
-  "assemblee-generale-2026": "/images/photos/photo3.jpg",
-  "nouveaux-maillots": "/images/photos/photo4.jpg",
+  "course-printaniere-2026": asset("/images/photos/photo1.jpg"),
+  "stage-paques-jeunes": asset("/images/photos/photo2.jpg"),
+  "assemblee-generale-2026": asset("/images/photos/photo3.jpg"),
+  "nouveaux-maillots": asset("/images/photos/photo4.jpg"),
 };
 
 type Props = { params: Promise<{ slug: string }> };
@@ -40,7 +41,7 @@ export default async function ArticlePage({ params }: Props) {
       <section className="relative text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={articleImages[article.id] || "/images/photos/photo1.jpg"}
+            src={articleImages[article.id] || asset("/images/photos/photo1.jpg")}
             alt={article.title}
             fill
             className="object-cover"

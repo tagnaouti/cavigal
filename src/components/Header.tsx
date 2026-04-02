@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navigation } from "@/lib/data";
+import { asset } from "@/lib/utils";
 
 export default function Header() {
   const pathname = usePathname();
@@ -33,7 +34,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/images/logo.png"
+              src={asset("/images/logo.png")}
               alt="Cavigal Nice Cyclisme"
               width={48}
               height={48}

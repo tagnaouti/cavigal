@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { articles } from "@/lib/data";
+import { asset } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Actualités",
@@ -9,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const articleImages: Record<string, string> = {
-  "course-printaniere-2026": "/images/photos/photo1.jpg",
-  "stage-paques-jeunes": "/images/photos/photo2.jpg",
-  "assemblee-generale-2026": "/images/photos/photo3.jpg",
-  "nouveaux-maillots": "/images/photos/photo4.jpg",
+  "course-printaniere-2026": asset("/images/photos/photo1.jpg"),
+  "stage-paques-jeunes": asset("/images/photos/photo2.jpg"),
+  "assemblee-generale-2026": asset("/images/photos/photo3.jpg"),
+  "nouveaux-maillots": asset("/images/photos/photo4.jpg"),
 };
 
 export default function ActualitesPage() {
@@ -21,7 +22,7 @@ export default function ActualitesPage() {
       <section className="relative text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/photos/photo6.jpg"
+            src={asset("/images/photos/photo6.jpg")}
             alt="Actualités Cavigal"
             fill
             className="object-cover"

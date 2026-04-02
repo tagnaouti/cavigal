@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { dirigeants } from "@/lib/data";
+import { asset } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "L'association",
@@ -15,7 +16,7 @@ export default function AssociationPage() {
       <section className="relative text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/photos/photo5.jpg"
+            src={asset("/images/photos/photo5.jpg")}
             alt="Cavigal Nice Cyclisme"
             fill
             className="object-cover"
@@ -62,7 +63,7 @@ export default function AssociationPage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden h-80">
               <Image
-                src="/images/photos/photo10.jpg"
+                src={asset("/images/photos/photo10.jpg")}
                 alt="Le club Cavigal"
                 fill
                 className="object-cover"

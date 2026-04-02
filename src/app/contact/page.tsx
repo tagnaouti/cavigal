@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { asset } from "@/lib/utils";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,7 +17,7 @@ export default function ContactPage() {
       <section className="relative text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/photos/photo7.jpg"
+            src={asset("/images/photos/photo7.jpg")}
             alt="Contact Cavigal"
             fill
             className="object-cover"

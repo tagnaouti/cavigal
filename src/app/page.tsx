@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { articles, events, partenaires } from "@/lib/data";
+import { asset } from "@/lib/utils";
 
 function HeroSection() {
   return (
@@ -8,7 +9,7 @@ function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/banner.png"
+          src={asset("/images/banner.png")}
           alt="Cyclistes Cavigal Nice"
           fill
           className="object-cover"
@@ -53,9 +54,9 @@ function HeroSection() {
 function ActualitesSection() {
   const recentArticles = articles.slice(0, 3);
   const articleImages = [
-    "/images/photos/photo1.jpg",
-    "/images/photos/photo2.jpg",
-    "/images/photos/photo3.jpg",
+    asset("/images/photos/photo1.jpg"),
+    asset("/images/photos/photo2.jpg"),
+    asset("/images/photos/photo3.jpg"),
   ];
 
   return (
@@ -200,12 +201,12 @@ function CalendrierSection() {
 
 function GalerieSection() {
   const photos = [
-    "/images/photos/photo4.jpg",
-    "/images/photos/photo5.jpg",
-    "/images/photos/photo6.jpg",
-    "/images/photos/photo7.jpg",
-    "/images/photos/photo8.jpg",
-    "/images/photos/photo9.jpg",
+    asset("/images/photos/photo4.jpg"),
+    asset("/images/photos/photo5.jpg"),
+    asset("/images/photos/photo6.jpg"),
+    asset("/images/photos/photo7.jpg"),
+    asset("/images/photos/photo8.jpg"),
+    asset("/images/photos/photo9.jpg"),
   ];
 
   return (
@@ -248,7 +249,7 @@ function PartenairesSection() {
           {partenaires.map((partenaire, i) => {
             const imgSrc =
               i < 2
-                ? `/images/partenaires/partenaire${i + 1}.jpg`
+                ? asset(`/images/partenaires/partenaire${i + 1}.jpg`)
                 : null;
             return (
               <div

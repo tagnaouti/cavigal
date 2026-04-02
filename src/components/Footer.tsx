@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { navigation } from "@/lib/data";
+import { asset } from "@/lib/utils";
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/images/logo.png"
+                src={asset("/images/logo.png")}
                 alt="Cavigal Nice Cyclisme"
                 width={40}
                 height={40}
